@@ -2,8 +2,10 @@ import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sexeducation/assets/sexeducation_theme.dart';
 
 import 'package:sexeducation/state_management/authentication/authentication_cubit.dart';
+import 'package:sexeducation/state_management/theme_settings/theme_settings_cubit.dart';
 import 'package:sexeducation/views/auth/login_view.dart';
 
 class RegisterView extends StatefulWidget {
@@ -146,6 +148,17 @@ class _RegisterView extends State<RegisterView> {
                       width: 300,
                       child: Image.asset('assets/logo/logo-color.png'),
                     ),
+                    Text('EliX',
+                        style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: context
+                                  .read<ThemeSettingsCubit>()
+                                  .state
+                                  .isDarkMode
+                              ? darkColorScheme.primary
+                              : lightColorScheme.primary,
+                        )),
                     Container(
                       alignment: Alignment.center,
                       padding: const EdgeInsets.all(10),

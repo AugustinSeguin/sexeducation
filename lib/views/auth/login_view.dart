@@ -1,3 +1,5 @@
+import 'package:sexeducation/assets/sexeducation_theme.dart';
+import 'package:sexeducation/state_management/theme_settings/theme_settings_cubit.dart';
 import 'package:sexeducation/views/auth/reset_password_view.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +8,8 @@ import 'package:go_router/go_router.dart';
 
 import 'package:sexeducation/state_management/authentication/authentication_cubit.dart';
 import 'package:sexeducation/views/auth/register_view.dart';
-import 'package:sexeducation/widgets/loading_widget.dart'; 
-import 'package:sexeducation/views/home_view.dart'; 
+import 'package:sexeducation/widgets/loading_widget.dart';
+import 'package:sexeducation/views/home_view.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({super.key});
@@ -23,9 +25,9 @@ class _LoginView extends State<LoginView> {
   final TextEditingController passwordController = TextEditingController();
 
   final FocusNode emailFocusNode = FocusNode();
-   final FocusNode passwordFocusNode = FocusNode();
-    String? emailError;
-      String? passwordError;
+  final FocusNode passwordFocusNode = FocusNode();
+  String? emailError;
+  String? passwordError;
 
   bool validatePassword(String pass) {
     RegExp passValid = RegExp(r"(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)");
@@ -42,10 +44,9 @@ class _LoginView extends State<LoginView> {
   @override
   void initState() {
     _passwordVisible = false;
-    super.initState(); 
- 
+    super.initState();
 
-      emailFocusNode.addListener(() {
+    emailFocusNode.addListener(() {
       if (!emailFocusNode.hasFocus) {
         if (!EmailValidator.validate(emailController.text)) {
           setState(() {
@@ -59,7 +60,7 @@ class _LoginView extends State<LoginView> {
       }
     });
 
-        passwordFocusNode.addListener(() {
+    passwordFocusNode.addListener(() {
       if (!passwordFocusNode.hasFocus) {
         if (!validatePassword(passwordController.text)) {
           setState(() {
@@ -73,7 +74,6 @@ class _LoginView extends State<LoginView> {
         }
       }
     });
-
   }
 
   @override
@@ -91,12 +91,13 @@ class _LoginView extends State<LoginView> {
                 backgroundColor: Colors.red,
               ),
             );
-          } 
+          }
         },
         child: BlocBuilder<AuthenticationCubit, AuthenticationState>(
           builder: (context, state) {
-            if (state is AuthenticationLoading || state is AuthenticationAuthenticated) {
-              return LoadingWidget(); 
+            if (state is AuthenticationLoading ||
+                state is AuthenticationAuthenticated) {
+              return LoadingWidget();
             }
             return SingleChildScrollView(
               child: Padding(
@@ -113,6 +114,17 @@ class _LoginView extends State<LoginView> {
                         width: 300,
                         child: Image.asset('assets/logo/logo-color.png'),
                       ),
+                      Text('EliX',
+                          style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: context
+                                    .read<ThemeSettingsCubit>()
+                                    .state
+                                    .isDarkMode
+                                ? darkColorScheme.primary
+                                : lightColorScheme.primary,
+                          )),
                       Container(
                         alignment: Alignment.center,
                         padding: const EdgeInsets.all(10),
@@ -138,7 +150,7 @@ class _LoginView extends State<LoginView> {
                         padding: const EdgeInsets.all(10),
                         child: TextFormField(
                           controller: emailController,
-                           focusNode: emailFocusNode,
+                          focusNode: emailFocusNode,
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Email',

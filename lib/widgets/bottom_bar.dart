@@ -1,9 +1,13 @@
+import 'package:sexeducation/views/forum_view.dart';
+import 'package:sexeducation/views/toolbox_view.dart';
 import 'package:sexeducation/views/users/account_view.dart';
 import 'package:sexeducation/views/search_view.dart';
+import 'package:sexeducation/views/messaging_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sexeducation/assets/sexeducation_theme.dart';
 import 'package:sexeducation/views/home_view.dart';
+import 'package:sexeducation/views/forum_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sexeducation/state_management/theme_settings/theme_settings_cubit.dart';
 
@@ -20,7 +24,8 @@ class AppBarFooter extends StatelessWidget {
       builder: (context, state) {
         final bool isDarkMode = state.isDarkMode;
         return Container(
-          color: isDarkMode ? darkColorScheme.surface : lightColorScheme.surface,
+          color:
+              isDarkMode ? darkColorScheme.surface : lightColorScheme.surface,
           height: 65.0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -40,6 +45,20 @@ class AppBarFooter extends StatelessWidget {
                 },
               ),
               IconButton(
+                icon: const Icon(Icons.people_outline_sharp),
+                color: (_getCurrentRoute(context) == "/${ForumView.name}"
+                    ? isDarkMode
+                        ? darkColorScheme.primary
+                        : lightColorScheme.primary
+                    : isDarkMode
+                        ? darkColorScheme.onSurfaceVariant
+                        : lightColorScheme.onSurfaceVariant),
+                tooltip: 'Forum',
+                onPressed: () {
+                  GoRouter.of(context).pushNamed(ForumView.name);
+                },
+              ),
+              IconButton(
                 icon: const Icon(Icons.search),
                 color: (_getCurrentRoute(context) == "/${SearchView.name}"
                     ? isDarkMode
@@ -54,17 +73,31 @@ class AppBarFooter extends StatelessWidget {
                 },
               ),
               IconButton(
-                icon: const Icon(Icons.person),
-                color: (_getCurrentRoute(context) == "/${AccountView.name}"
+                icon: const Icon(Icons.message),
+                color: (_getCurrentRoute(context) == "/${MessagingView.name}"
                     ? isDarkMode
                         ? darkColorScheme.primary
                         : lightColorScheme.primary
                     : isDarkMode
                         ? darkColorScheme.onSurfaceVariant
                         : lightColorScheme.onSurfaceVariant),
-                tooltip: 'Your Account',
+                tooltip: 'Messaging',
                 onPressed: () {
-                  GoRouter.of(context).pushNamed(AccountView.name);
+                  GoRouter.of(context).pushNamed(MessagingView.name);
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.handyman),
+                color: (_getCurrentRoute(context) == "/${ToolboxView.name}"
+                    ? isDarkMode
+                        ? darkColorScheme.primary
+                        : lightColorScheme.primary
+                    : isDarkMode
+                        ? darkColorScheme.onSurfaceVariant
+                        : lightColorScheme.onSurfaceVariant),
+                tooltip: 'Toolbox',
+                onPressed: () {
+                  GoRouter.of(context).pushNamed(ToolboxView.name);
                 },
               ),
             ],

@@ -67,6 +67,13 @@ flutter {
     source '../..'
 }
 
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+configurations.all {
+    resolutionStrategy {
+        force 'library_name:library_version'
+    }
+}
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0' // Dernière version stable
+    }
 }

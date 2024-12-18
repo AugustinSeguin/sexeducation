@@ -60,4 +60,6 @@ flutter:
     - assets/data/users.json
     - assets/data/posts.json
     - assets/data/notifications.json
+    - assets/taboo.png
+    - assets/calendar-menstruel.png
   uses-material-design: true

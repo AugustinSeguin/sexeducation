@@ -28,14 +28,16 @@ class LegalNoticesView extends StatelessWidget {
             children: [
               // Editeur
               Column(children: [
-                const LegalTitle(textContent: 'Éditeur du site :'),
-                const Text('l\'équipe Ecogest'),
+                const LegalTitle(textContent: 'Éditeur de l\'application :'),
+                const Text('l\'équipe EliX'),
                 const Text('Augustin Seguin'),
-                const Text('Eléonore Euzenes'),
-                const Text('Léa Clair'),
+                const Text('Axelle Capron'),
+                const Text('Mathis Vial'),
+                const Text('Dorian Malitte'),
+                const Text('Léandra Di Giugno'),
                 RichText(
                   text: TextSpan(
-                        text: 'contact@ecogest.org',
+                        text: 'contact@elix.org',
                         style: TextStyle(
                           color: context
                                   .read<ThemeSettingsCubit>()
@@ -49,7 +51,7 @@ class LegalNoticesView extends StatelessWidget {
                             // Launch email application
                             final Uri emailLaunchUri = Uri(
                               scheme: 'mailto',
-                              path: 'contact@ecogest.org',
+                              path: 'contact@elix.org',
                             );
                             try {
                               await launchUrl(emailLaunchUri);
@@ -64,7 +66,7 @@ class LegalNoticesView extends StatelessWidget {
               // Directeur
               const Column(children: [
                 LegalTitle(textContent: 'Directeur de la publication :'),
-                Text('Ecogest'),
+                Text('EliX'),
               ]),
               const Separator(),
               // Hébergement

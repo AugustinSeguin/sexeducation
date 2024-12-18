@@ -9,7 +9,7 @@ part 'theme_settings_state.dart';
 /// By default, the theme is set to light mode.
 
 class ThemeSettingsCubit extends Cubit<ThemeSettingsState> {
-  ThemeSettingsCubit() : super(ThemeSettingsState(themeMode: ThemeMode.light)) {
+  ThemeSettingsCubit() : super(ThemeSettingsState(themeMode: ThemeMode.dark)) {
     _loadTheme();
   }
 
@@ -31,6 +31,6 @@ class ThemeSettingsCubit extends Cubit<ThemeSettingsState> {
     final prefs = await SharedPreferences.getInstance();
     final isDarkMode = prefs.getBool(_themePrefKey) ?? false;
     emit(state.copyWith(
-        themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light));
+        themeMode: !isDarkMode ? ThemeMode.dark : ThemeMode.light));
   }
 }

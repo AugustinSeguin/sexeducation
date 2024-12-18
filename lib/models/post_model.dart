@@ -43,7 +43,7 @@ class PostModel {
       title: json['title']?.toString(),
       description: json['description']?.toString(),
       type: json['type']?.toString() ?? "",
-      image: json['image']?.toString() ?? "",
+      image: json['image']?.toString(),
       createdAt: json['created_at']?.toString(),
       updatedAt: json['updated_at']?.toString(),
     );

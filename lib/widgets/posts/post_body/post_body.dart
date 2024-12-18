@@ -25,12 +25,8 @@ class PostBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (post.image != null) ...[
-          PostBodyImage(imageUrl: post.image),
-          const SizedBox(height: 8),
-        ] else ...[
-          const Separator(),
-        ],
+        PostBodyImage(imageUrl: post.image),
+        const SizedBox(height: 8),
         const Separator(),
         Padding(
           padding: const EdgeInsets.all(8.0),
