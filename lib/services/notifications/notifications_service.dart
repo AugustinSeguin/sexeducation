@@ -2,6 +2,8 @@ import 'package:sexeducation/data/sexeducation_api_data_source.dart';
 import 'package:sexeducation/models/notification_model.dart';
 import 'package:sexeducation/services/authentication_service.dart';
 import 'package:sexeducation/services/notifications/local_notification_service.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
 
 class NotificationsService {
   // PusherChannelsFlutter pusher = PusherChannelsFlutter.getInstance();
@@ -11,13 +13,13 @@ class NotificationsService {
   //   localNotificationService.initialize();
   // }
 
-  static Future<List<NotificationModel>?> getNotifications() async {
-    final String? token = await AuthenticationService.getToken();
+  static Future<List<NotificationModel>?> getNotifications({bool? isRead}) async {
+    // Load the notifications.json file
+    final String response = await rootBundle.loadString('data/notifications.json');
+    final List<dynamic> notificationsJson = json.decode(response);
 
-    final List<dynamic> responseMap =
-        await EcoGestApiDataSource.get('/me/notifications', token: token);
-
-    final List<NotificationModel> notifications = responseMap.map((notif) {
+    // Convert the JSON data to a list of NotificationModel objects
+    final notifications = notificationsJson.map((notif) {
       return NotificationModel.fromJson(notif);
     }).toList();
 

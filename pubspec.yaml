@@ -54,11 +54,10 @@ flutter:
     - assets/icon/icon-white.png
     - assets/icon/icon-reverse.png
     - assets/
-    - assets/trophy/
-    - assets/onboarding/
     - assets/404.jpg
     - .env.example
     - .env
     - assets/data/users.json
     - assets/data/posts.json
+    - assets/data/notifications.json
   uses-material-design: true

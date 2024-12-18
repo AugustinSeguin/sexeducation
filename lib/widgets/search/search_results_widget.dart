@@ -22,7 +22,7 @@ class SearchResultsWidget extends StatelessWidget {
               } else if (state is SearchStateError) {
                 return Center(
                   child: Container(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         horizontal:
                             16.0), // Ajustez la valeur pour définir la marge souhaitée
                     child: Text(state.message),
@@ -31,7 +31,7 @@ class SearchResultsWidget extends StatelessWidget {
               } else if (state is SearchStateSuccess) {
                 return Column(children: [
                   Text(state.posts.isEmpty
-                      ? 'Pas de publication'
+                      ? 'Pas de résultats'
                       : 'Résultats des publications'),
                   ListView.builder(
                     shrinkWrap: true,
@@ -44,18 +44,6 @@ class SearchResultsWidget extends StatelessWidget {
                   ),
                   const SizedBox(
                     height: 20,
-                  ),
-                  Text(state.users.isEmpty
-                      ? 'Pas d\'utilisateurs'
-                      : 'Résultats des utilisateurs'),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: state.users.length,
-                    itemBuilder: (context, index) => ListTile(
-                      title: Text('Resultat'),
-                      onTap: () {
-                      },
-                    ),
                   ),
                 ]);
               }

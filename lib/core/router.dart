@@ -101,6 +101,11 @@ abstract class AppRouter {
         // (only if the current location is not a public page).
         if (!publicRoutes.contains(state.uri.toString()) &&
           status is AuthenticationUnauthenticated || status is AuthenticationInitial) {
+
+            debugPrint(state.uri.toString());
+            debugPrint(status.toString());
+
+
           return '/login';
         }
 
