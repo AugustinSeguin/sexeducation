@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "categoryId": 201,
+      "authorId": 1,
+      "title": "Comprendre les changements à l'adolescence",
+      "description": "Une explication claire sur les transformations physiques et émotionnelles de la puberté.",
+      "type": "Article",
+      "createdAt": "2024-12-10T14:00:00Z",
+      "updatedAt": "2024-12-12T16:00:00Z",
+      "user": 1
+    },
+    {
+      "id": 2,
+      "categoryId": 202,
+      "authorId": 2,
+      "title": "L'importance du consentement",
+      "description": "Un guide pour comprendre et respecter les limites de chacun dans une relation.",
+      "type": "Guide",
+      "createdAt": "2024-12-01T08:00:00Z",
+      "updatedAt": "2024-12-05T10:00:00Z",
+      "user": 2
+    },
+    {
+      "id": 3,
+      "categoryId": 203,
+      "authorId": 3,
+      "title": "Qu'est-ce que l'orientation sexuelle ?",
+      "description": "Une exploration des différentes orientations sexuelles et de l'importance d'être soi-même.",
+      "type": "Blog Post",
+      "createdAt": "2024-12-03T18:00:00Z",
+      "updatedAt": "2024-12-04T20:00:00Z",
+      "user": 3
+    },
+    {
+      "id": 4,
+      "categoryId": 204,
+      "authorId": 4,
+      "title": "Gérer les premières relations amoureuses",
+      "description": "Des conseils pour vivre sereinement ses premières expériences sentimentales.",
+      "type": "Article",
+      "createdAt": "2024-11-25T14:00:00Z",
+      "updatedAt": "2024-12-01T16:00:00Z",
+      "user": 4
+    },
+    {
+      "id": 5,
+      "categoryId": 205,
+      "authorId": 5,
+      "title": "La santé sexuelle et l'importance de la prévention",
+      "description": "Un article sur les moyens de contraception et la prévention des IST.",
+      "type": "Guide",
+      "createdAt": "2024-12-10T08:00:00Z",
+      "updatedAt": "2024-12-13T18:00:00Z",
+      "user": 5
+    }
+  ]
+  

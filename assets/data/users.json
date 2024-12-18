@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "email": "leo.dubois@example.com",
+    "firstname": "Léo",
+    "lastname": "Dubois",
+    "birthdate": "2010-06-12",
+    "biography": "6e",
+    "position": "Collège Jules Verne, Nantes",
+    "password": "Leo2024!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.LeoDubois.abc123"
+  },
+  {
+    "id": 2,
+    "email": "claire.martin@example.com",
+    "firstname": "Claire",
+    "lastname": "Martin",
+    "birthdate": "2008-11-25",
+    "biography": "2nde",
+    "position": "Lycée Louis Pasteur, Lyon",
+    "password": "Claire2024!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ClaireMartin.def456"
+  },
+  {
+    "id": 3,
+    "email": "mathieu.leroux@example.com",
+    "firstname": "Mathieu",
+    "lastname": "Leroux",
+    "birthdate": "2014-03-08",
+    "biography": "CM2",
+    "position": "École Primaire Saint-Exupéry, Marseille",
+    "password": "Mathieu2024!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.MathieuLeroux.ghi789"
+  },
+  {
+    "id": 4,
+    "email": "emma.duval@example.com",
+    "firstname": "Emma",
+    "lastname": "Duval",
+    "birthdate": "2006-09-17",
+    "biography": "1re",
+    "position": "Lycée Montaigne, Bordeaux",
+    "password": "Emma2024!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.EmmaDuval.jkl012"
+  },
+  {
+    "id": 5,
+    "email": "lucas.bernard@example.com",
+    "firstname": "Lucas",
+    "lastname": "Bernard",
+    "birthdate": "2012-01-30",
+    "biography": "4e",
+    "position": "Collège Victor Hugo, Paris",
+    "password": "Lucas2024!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.LucasBernard.mno345"
+  }
+]

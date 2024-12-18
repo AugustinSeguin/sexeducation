@@ -1,0 +1,64 @@
+name: sexeducation
+description: Sex education project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  email_validator: ^2.1.17
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.3
+  go_router: ^14.1.4
+  google_fonts: ^6.0.0
+  http: ^1.1.0
+  provider: ^6.0.5
+  rflutter_alert: 2.0.7
+  shared_preferences: ^2.2.2
+  intl: ^0.19.0
+  flutter_localizations:
+    sdk: flutter
+  date_field: ^5.2.1
+  flutter_tagging_plus: ^4.0.2
+  url_launcher: ^6.2.1
+  image_picker: ^1.0.5
+  path_provider: ^2.1.1
+  web: ^0.5.0
+  pusher_channels_flutter: ^2.2.1
+  crypto: ^3.0.3
+  flutter_local_notifications: ^17.0.1
+  timezone: ^0.9.2
+  rxdart: ^0.27.7
+  device_info_plus: ^10.1.0
+  flutter_timezone: ^1.0.8
+  image: ^4.1.7
+  flutter_dotenv: ^5.1.0
+  notification_permissions: ^0.6.1
+  permission_handler: ^10.0.0
+  introduction_screen: ^3.1.12
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  assets:  
+    - assets/logo/logo-color.png
+    - assets/logo/logo-black.png
+    - assets/logo/logo-white.png
+    - assets/icon/icon-color.png
+    - assets/icon/icon-black.png
+    - assets/icon/icon-white.png
+    - assets/icon/icon-reverse.png
+    - assets/
+    - assets/trophy/
+    - assets/onboarding/
+    - assets/404.jpg
+    - .env.example
+    - .env
+    - assets/data/users.json
+    - assets/data/posts.json
+  uses-material-design: true
