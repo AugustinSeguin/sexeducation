@@ -1,5 +1,4 @@
 import 'package:sexeducation/models/post_model.dart';
-import 'package:sexeducation/models/user_model.dart';
 import 'package:sexeducation/services/search_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,9 +11,8 @@ class SearchCubit extends Cubit<SearchState> {
     try {
       emit(SearchStateLoading());
       final query = untrimmedQuery.trim();
-      final users = await SearchService.searchUsers(query);
-      final posts = await SearchService.searchPosts(query);
-      emit(SearchStateSuccess(users, posts));
+      final posts = await SearchService.search(query);
+      emit(SearchStateSuccess(posts));
     } catch (error) {
       emit(SearchStateError("Une erreur est survenue lors de votre recherche. Veuillez réessayer."));
     }

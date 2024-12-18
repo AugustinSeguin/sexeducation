@@ -7,8 +7,7 @@
       "description": "Une explication claire sur les transformations physiques et émotionnelles de la puberté.",
       "type": "Article",
       "createdAt": "2024-12-10T14:00:00Z",
-      "updatedAt": "2024-12-12T16:00:00Z",
-      "user": 1
+      "updatedAt": "2024-12-12T16:00:00Z"
     },
     {
       "id": 2,
@@ -18,8 +17,7 @@
       "description": "Un guide pour comprendre et respecter les limites de chacun dans une relation.",
       "type": "Guide",
       "createdAt": "2024-12-01T08:00:00Z",
-      "updatedAt": "2024-12-05T10:00:00Z",
-      "user": 2
+      "updatedAt": "2024-12-05T10:00:00Z"
     },
     {
       "id": 3,
@@ -29,8 +27,7 @@
       "description": "Une exploration des différentes orientations sexuelles et de l'importance d'être soi-même.",
       "type": "Blog Post",
       "createdAt": "2024-12-03T18:00:00Z",
-      "updatedAt": "2024-12-04T20:00:00Z",
-      "user": 3
+      "updatedAt": "2024-12-04T20:00:00Z"
     },
     {
       "id": 4,
@@ -40,8 +37,7 @@
       "description": "Des conseils pour vivre sereinement ses premières expériences sentimentales.",
       "type": "Article",
       "createdAt": "2024-11-25T14:00:00Z",
-      "updatedAt": "2024-12-01T16:00:00Z",
-      "user": 4
+      "updatedAt": "2024-12-01T16:00:00Z"
     },
     {
       "id": 5,
@@ -51,8 +47,7 @@
       "description": "Un article sur les moyens de contraception et la prévention des IST.",
       "type": "Guide",
       "createdAt": "2024-12-10T08:00:00Z",
-      "updatedAt": "2024-12-13T18:00:00Z",
-      "user": 5
+      "updatedAt": "2024-12-13T18:00:00Z"
     }
   ]
   

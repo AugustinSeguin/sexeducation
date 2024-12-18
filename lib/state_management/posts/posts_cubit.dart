@@ -1,5 +1,5 @@
 import 'package:sexeducation/services/post_service.dart';
-import 'package:sexeducation/state_management/posts/content_state.dart';
+import 'package:sexeducation/state_management/posts/posts_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,10 +8,11 @@ class PostsCubit extends Cubit<PostState> {
 
   static final PostService postService = PostService();
 
-  Future<void> getPosts(int pageNbr) async {
+  Future<void> getPosts() async {
     try {
       emit(PostStateLoading());
-      final posts = await postService.getPosts(pageNbr);
+      final posts = await postService.getPosts();
+      debugPrint("posts: ${posts[0].description}");
       emit(PostStateSuccess(posts));
     } catch (error) {
       emit(PostsStateError(

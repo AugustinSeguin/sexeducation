@@ -53,5 +53,16 @@
     "position": "Collège Victor Hugo, Paris",
     "password": "Lucas2024!",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.LucasBernard.mno345"
+  }, 
+  {
+    "id": 6,
+    "email": "augustin@test.dev",
+    "firstname": "Augustin",
+    "lastname": "Seguin",
+    "birthdate": "2024-06-15",
+    "biography": "Etudiant à MDS",
+    "position": "Grenoble",
+    "password": "Password:123",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.AugustinSeguin.mno345"
   }
 ]

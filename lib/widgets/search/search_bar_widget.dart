@@ -19,8 +19,8 @@ class SearchBarWidget extends StatelessWidget {
             controller: queryController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
-              labelText: 'Rechercher une publication ou un utilisateur',
-              hintText: 'Rechercher une publication ou un utilisateur',
+              labelText: 'Rechercher une publication',
+              hintText: 'Rechercher une publication',
             ),
             autovalidateMode: AutovalidateMode.onUserInteraction,
              validator: (value) => (value != null && value.isNotEmpty)

@@ -1,13 +1,12 @@
 import 'package:sexeducation/data/sexeducation_api_data_source.dart';
 import 'package:sexeducation/models/post_model.dart';
 import 'package:sexeducation/services/authentication_service.dart';
-import 'package:sexeducation/services/notifications/notifications_service.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class PostService {
-  Future<List<PostModel>> getPosts(int pageNbr) async {
+  Future<List<PostModel>> getPosts() async {
     // Load the posts.json file
     final String response = await rootBundle.loadString('data/posts.json');
     final List<dynamic> postsJson = json.decode(response);

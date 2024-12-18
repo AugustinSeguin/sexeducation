@@ -11,7 +11,6 @@ class PostModel {
   final String? image;
   final String? createdAt;
   final String? updatedAt;
-  final UserModel? user;
 
   const PostModel({
     this.id,
@@ -23,7 +22,6 @@ class PostModel {
     required this.type,
     this.createdAt,
     this.updatedAt,
-    this.user,
   });
 
   PostModel copyWith(categoryId, authorId, type) {
@@ -48,9 +46,6 @@ class PostModel {
       image: json['image']?.toString() ?? "",
       createdAt: json['created_at']?.toString(),
       updatedAt: json['updated_at']?.toString(),
-      user: json['user'] != null
-          ? UserModel.fromJson(json['user'] as Map<String, Object?>)
-          : null,
     );
   }
 
