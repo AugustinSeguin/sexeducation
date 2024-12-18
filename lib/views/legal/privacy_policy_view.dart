@@ -24,10 +24,10 @@ class PrivacyPolicyView extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const Text('Dernière mise à jour : 22 juin 2024'),
+              const Text('Dernière mise à jour : 19/12/2024'),
               const Separator(),
               const Text(
-                  'Bienvenue sur l\'application Ecogest de Ecogest (ci-après "nous", "notre" ou "l\'entreprise"). Chez Ecogest, nous accordons une grande importance à la protection de la vie privée de nos utilisateurs. Cette politique de confidentialité a pour but de vous informer sur la manière dont nous collectons, utilisons, partageons et protégeons vos informations personnelles. En utilisant notre site web ou notre application mobile, vous acceptez les conditions de cette politique de confidentialité.'),
+                  'Bienvenue sur l\'applicatio EliX. Chez EliX, nous accordons une grande importance à la protection de la vie privée de nos utilisateurs. Cette politique de confidentialité a pour but de vous informer sur la manière dont nous collectons, utilisons, partageons et protégeons vos informations personnelles. En utilisant notre site web ou notre application mobile, vous acceptez les conditions de cette politique de confidentialité.'),
               const Separator(),
               const Column(children: [
                 LegalTitle(
@@ -119,7 +119,7 @@ class PrivacyPolicyView extends StatelessWidget {
                         ),
                       ),
                       TextSpan(
-                        text: 'contact@egogest.org',
+                        text: 'contact@elix.org',
                         style: TextStyle(
                           color: context
                                   .read<ThemeSettingsCubit>()
@@ -133,7 +133,7 @@ class PrivacyPolicyView extends StatelessWidget {
                             // Launch email application
                             final Uri emailLaunchUri = Uri(
                               scheme: 'mailto',
-                              path: 'contact@egogest.org',
+                              path: 'contact@elix.org',
                             );
                             try {
                               await launchUrl(emailLaunchUri);

@@ -4,6 +4,7 @@ import 'package:sexeducation/state_management/theme_settings/theme_settings_cubi
 import 'package:sexeducation/views/legal/change_password_view.dart';
 import 'package:sexeducation/views/legal/legal_notices_view.dart';
 import 'package:sexeducation/views/legal/privacy_policy_view.dart';
+import 'package:sexeducation/views/users/account_view.dart';
 import 'package:sexeducation/widgets/app_bar.dart';
 import 'package:sexeducation/widgets/bottom_bar.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,23 @@ class SettingsView extends StatelessWidget {
                 children: [
                   Column(
                     children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.person
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              GoRouter.of(context).pushNamed(AccountView.name);
+                            },
+                            child: const Text('Mon compte'),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 16.0,
+                      ),
                       const Text('Thème'),
                       BlocBuilder<ThemeSettingsCubit, ThemeSettingsState>(
                           builder: (context, state) {

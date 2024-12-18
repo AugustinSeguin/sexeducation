@@ -1,9 +1,11 @@
 import 'dart:async';
 
+import 'package:sexeducation/views/forum_view.dart';
 import 'package:sexeducation/views/legal/legal_notices_view.dart';
 import 'package:sexeducation/views/legal/privacy_policy_view.dart';
 import 'package:sexeducation/views/notifications_view.dart';
 import 'package:sexeducation/views/errors/error404_view.dart';
+import 'package:sexeducation/views/toolbox_view.dart';
 import 'package:sexeducation/views/users/account_view.dart';
 import 'package:sexeducation/views/settings_view.dart';
 import 'package:sexeducation/views/search_view.dart';
@@ -11,11 +13,11 @@ import 'package:sexeducation/state_management/authentication/authentication_cubi
 import 'package:sexeducation/views/auth/register_view.dart';
 import 'package:sexeducation/views/auth/login_view.dart';
 import 'package:sexeducation/views/home_view.dart';
+import 'package:sexeducation/views/messaging_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:web/web.dart';
 
 abstract class AppRouter {
   /// Public routes
@@ -75,7 +77,21 @@ abstract class AppRouter {
           name: PrivacyPolicyView.name,
           builder: (context, state) => const PrivacyPolicyView(),
         ),
-
+        GoRoute(
+          path: '/toolbox',
+          name: ToolboxView.name,
+          builder: (context, state) => ToolboxView(),
+        ),
+        GoRoute(
+          path: '/messaging',
+          name: MessagingView.name,
+          builder: (context, state) => MessagingView(),
+        ),
+        GoRoute(
+          path: '/forum',
+          name: ForumView.name,
+          builder: (context, state) => ForumView(),
+        ),
       ],
       refreshListenable: GoRouterRefreshStream(stream),
       redirect: (context, state) async {
@@ -89,7 +105,7 @@ abstract class AppRouter {
         // Rediriger vers l'onboarding si ce n'est pas encore vu
         // if (!onboardingSeen) {
         //   return '/onboarding';
-//         // }
+        //         // }
 
         // If the user is authenticated, redirect to the home page (only if
         // the current location is public page)
@@ -100,11 +116,10 @@ abstract class AppRouter {
         // If the user is not authenticated, redirect to the login page.
         // (only if the current location is not a public page).
         if (!publicRoutes.contains(state.uri.toString()) &&
-          status is AuthenticationUnauthenticated || status is AuthenticationInitial) {
-
-            debugPrint(state.uri.toString());
-            debugPrint(status.toString());
-
+                status is AuthenticationUnauthenticated ||
+            status is AuthenticationInitial) {
+          debugPrint(state.uri.toString());
+          debugPrint(status.toString());
 
           return '/login';
         }

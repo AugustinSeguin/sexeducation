@@ -10,8 +10,10 @@ class PostBodyImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return imageUrl != null
-        ? Image.network(imageUrl!, fit: BoxFit.cover)
-        : Image.asset('assets/profile.png');
+    return Center(
+      child: imageUrl != null
+          ? Image.network(imageUrl!, fit: BoxFit.cover)
+          : Image.asset('assets/taboo.png', fit: BoxFit.cover),
+    );
   }
 }
